@@ -1,0 +1,18 @@
+<div
+  class="card bg-black border text-white p-3 rounded-0"
+  [ngClass]="{
+    'text-success': data.percentChange > 0,
+    'text-danger': data.percentChange < 0
+  }"
+>
+  <p>
+    <img
+      [src]="
+        'https://www.bitkub.com/static/images/icons/' + secSymbolName + '.png'
+      "
+      [alt]="secSymbolName"
+    />&nbsp;{{ data.symbol }} ({{ data.percentChange }}%) <br />
+    vol.{{ data.baseVolume | currency: " " }}
+  </p>
+  <h4>{{ data.last | currency: "฿" }}</h4>
+</div>

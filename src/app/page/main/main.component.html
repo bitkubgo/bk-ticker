@@ -1,0 +1,13 @@
+<div class="row pt-0">
+  <div class="col">
+    <div class="row">
+      <div class="col-12"></div>
+      <div
+        class="col-sm-6 col-md-6 col-lg-4 mb-1 p-1"
+        *ngFor="let data of tickers; trackBy: trackTicker"
+      >
+        <app-crypto-card [data]="data"></app-crypto-card>
+      </div>
+    </div>
+  </div>
+</div>

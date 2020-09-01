@@ -1,0 +1,20 @@
+.card {
+  transition: all .3s;
+  animation: blink .3s linear;
+}
+
+.bg-black{
+  background-color: black;
+}
+
+@keyframes blink {
+  0% {
+    background-color: blue
+  }
+  //50% {
+  //  background-color: blue
+  //}
+  //100% {
+  //  background-color: blue
+  //}
+}

@@ -1,0 +1,40 @@
+<div class="row pt-1">
+  <table class="table text-white table-striped table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Rate</th>
+        <th>Amount</th>
+        <th>Side</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let data of tradeSlotData; trackBy: trackTicker; let i = index"
+        [ngStyle]="{
+          'background-color': i === this.tradeSlot - 1 ? 'blue' : ''
+        }"
+        [ngClass]="{
+          'text-success': data.s === 'b',
+          'text-danger': data.s === 's'
+        }"
+      >
+        <td>
+          <img
+            [src]="
+              'https://www.bitkub.com/static/images/icons/' +
+              data.sym.slice(4).toUpperCase() +
+              '.png'
+            "
+          />
+          {{ data.sym.slice(4) | uppercase }}
+        </td>
+        <td>{{ data.rat | currency: "฿" }}</td>
+        <td>{{ data.amt }}</td>
+        <td>{{ data.s == "b" ? "BUY" : "SELL" }}</td>
+        <td>{{ data.ts * 1000 | date: "d/MM/yyyy hh:mm:s" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
